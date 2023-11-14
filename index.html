@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <style>
+      .app {
+        height: 100vh;
+      }
+
+      .videos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 70%;
+        margin: 1rem auto;
+      }
+      .videos video {
+        width: calc(100% / 3 - 0.6rem);
+        margin: 0.3rem;
+        border: 0.5px solid;
+      }
+      .notifications {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 0 10px;
+        background-color: #fff;
+      }
+    </style>
+    <script>
+      var parcelRequire;
+    </script>
+  </head>
+  <body>
+    <div id="app" class="app">
+      <button id="start">Start</button>
+      <button id="call">Join</button>
+      <button id="answer-call" disabled>Answer Call</button>
+      <div>
+        <input type="text" name="" id="peer_id" readonly />
+        <form action="" method="post" id="connect">
+          <div>
+            <input type="text" name="peer_id" />
+            <button>Connect</button>
+          </div>
+        </form>
+        <div id="messages"></div>
+        <form action="" method="post" id="new-message">
+          <div>
+            <input type="text" name="content" />
+            <button>Send</button>
+          </div>
+        </form>
+      </div>
+      <div id="videos" class="videos">
+        <video src="" id="webcam" autoplay></video>
+      </div>
+    </div>
+    <div id="notify" class="notifications"></div>
+    <script src="http://localhost:5000/socket.io/socket.io.js"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
